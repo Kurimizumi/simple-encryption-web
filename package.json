@@ -1,6 +1,6 @@
 {
   "name": "simple-encryption",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple encryption using node-forge as the library to encrypt",
   "main": "index.js",
   "directories": {
