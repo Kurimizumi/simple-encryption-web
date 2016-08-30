@@ -25,7 +25,7 @@ describe('AES Cipher Suite', function() {
     var encrypted = {encrypted: '2PaGGcwdQVYrIaajTSTRsaBCY1ln5BmCnK+H8D6jCsrnxJzYD2Lv2wKKnpSTO3Sx2ygwnWGSW8hg+hyCsKJX/KAc5w==', tag: 'VLTbQOrNPxdQB7UV11jxGA=='}
     var key = 'otm4pQef8EO4hvbNr3R4bEhT1LJ3bpYTQ8HumBfMufw=';
     var iv = 'qDDap/gqf2zFhxZi';
-    var decrypted = AES.decrypt(key, iv, encrypted.encrypted, encrypted.tag);
+    var decrypted = AES.decrypt(key, iv, encrypted.tag, encrypted.encrypted);
     expect(decrypted).to.equal('Hi guys! Want to meet up for a mocha? Regards, the matrix on Earth.');
   });
 });
