@@ -1,5 +1,7 @@
 # simple-encryption
-[![CircleCI](https://circleci.com/gh/Kurimizumi/simple-encryption.svg?&style=shield)](https://circleci.com/gh/Kurimizumi/simple-encryption)
+[![CircleCI][circleci-image]][circleci-link]
+[![NPM Version][version-image]][npm-link]
+[![NPM Download][download-image]][npm-link]
 
 Simple encryption module for NodeJS using node-forge
 
@@ -81,3 +83,13 @@ if(decrypted) {
   console.log("Auth failed");
 }
 ```
+
+## License
+[ISC][license-link]
+
+[license-link]: https://github.com/Kurimizumi/simple-encryption/blob/master/LICENSE.md
+[circleci-image]: https://circleci.com/gh/Kurimizumi/simple-encryption.svg?&style=shield
+[circleci-link]: https://circleci.com/gh/Kurimizumi/simple-encryption
+[npm-link]: https://npmjs.org/package/simple-encryption
+[version-image]: https://img.shields.io/npm/v/simple-encryption.svg
+[download-image]: https://img.shields.io/npm/dm/simple-encryption.svg
