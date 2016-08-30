@@ -19,12 +19,13 @@ describe('AES Cipher Suite', function() {
     var key = 'otm4pQef8EO4hvbNr3R4bEhT1LJ3bpYTQ8HumBfMufw=';
     var iv = 'qDDap/gqf2zFhxZi';
     var encrypted = AES.encrypt(key, iv, plaintext);
-    expect(encrypted).to.deep.equal(['2PrKEtZIEjpuBKS4S32Fv+5LJmx/sRidnemr43DiXcKozZvQXmLU0FrLvpWHdiahwGEwhGiDCdd9tAaf+YZY/fQbpx7kPVZpo9WFfw==', '/z6JSz16wFKeyj0KfkGDww==', 'qDDap/gqf2zFhxZi']);
+    expect(encrypted).to.deep.equal({encrypted: '2PrKEtZIEjpuBKS4S32Fv+5LJmx/sRidnemr43DiXcKozZvQXmLU0FrLvpWHdiahwGEwhGiDCdd9tAaf+YZY/fQbpx7kPVZpo9WFfw==', tag: '/z6JSz16wFKeyj0KfkGDww=='});
   });
   it('decrypts ciphertext', function() {
-    var encrypted = ['2PaGGcwdQVYrIaajTSTRsaBCY1ln5BmCnK+H8D6jCsrnxJzYD2Lv2wKKnpSTO3Sx2ygwnWGSW8hg+hyCsKJX/KAc5w==', 'VLTbQOrNPxdQB7UV11jxGA==', 'qDDap/gqf2zFhxZi']
+    var encrypted = {encrypted: '2PaGGcwdQVYrIaajTSTRsaBCY1ln5BmCnK+H8D6jCsrnxJzYD2Lv2wKKnpSTO3Sx2ygwnWGSW8hg+hyCsKJX/KAc5w==', tag: 'VLTbQOrNPxdQB7UV11jxGA=='}
     var key = 'otm4pQef8EO4hvbNr3R4bEhT1LJ3bpYTQ8HumBfMufw=';
-    var decrypted = AES.decrypt(key, encrypted[2], encrypted[1], encrypted[0]);
+    var iv = 'qDDap/gqf2zFhxZi';
+    var decrypted = AES.decrypt(key, iv, encrypted.encrypted, encrypted.tag);
     expect(decrypted).to.equal('Hi guys! Want to meet up for a mocha? Regards, the matrix on Earth.');
   });
 });

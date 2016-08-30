@@ -1,4 +1,6 @@
 # simple-encryption
+[![CircleCI](https://circleci.com/gh/Kurimizumi/simple-encryption.svg?&style=shield)](https://circleci.com/gh/Kurimizumi/simple-encryption)
+
 Simple encryption module for NodeJS using node-forge
 
 ## Installation
